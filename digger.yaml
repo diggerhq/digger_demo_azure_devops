@@ -4,7 +4,7 @@ projects:
   dir: .
   workspace: default
   workflow: dev
- workflows:
+workflows:
 - name: dev
   workflow_configuration:
     on_pull_request_pushed: [digger plan]
