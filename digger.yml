@@ -2,4 +2,4 @@ projects:
   - name: "dev"
     dir: "."
   - name: "prod"
-    dir: "prod"
+    dir: "."
