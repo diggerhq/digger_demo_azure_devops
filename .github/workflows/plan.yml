@@ -14,7 +14,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    env:
+      ACTIONS_CACHE_URL: ${{ env.ACTIONS_CACHE_URL }}
+      ACTIONS_RUNTIME_TOKEN: ${{ env.ACTIONS_RUNTIME_TOKEN }}
     steps:
 #      - uses: actions/checkout@v3
 #        with:
@@ -36,6 +38,10 @@ jobs:
 #          GITHUB_CONTEXT: ${{ toJson(github) }}
 #          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: print ACTIONS_CACHE_URL
+        run: |
+          echo $ACTIONS_CACHE_URL
+          echo $ACTIONS_RUNTIME_TOKEN
+      - name: print ACTIONS_CACHE_URL from env
         env:
           ACTIONS_CACHE_URL: ${{ env.ACTIONS_CACHE_URL }}
           ACTIONS_RUNTIME_TOKEN: ${{ env.ACTIONS_RUNTIME_TOKEN }}
