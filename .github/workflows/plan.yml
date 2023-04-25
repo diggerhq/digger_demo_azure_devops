@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: digger tfrun
-        uses: diggerhq/digger@feat/pack-actions
+        uses: fleroux514/digger@gha-support-gcp-identity-federation
         with:
           setup-aws: true
           setup-google-cloud: true
