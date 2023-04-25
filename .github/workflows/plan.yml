@@ -16,8 +16,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: refs/pull/${{ github.event.issue.number }}/merge
+        if: github.event_name == 'issue_comment'
+      - uses: actions/checkout@v3
+        if: github.event_name != 'issue_comment'
+
       - name: digger tfrun
-        uses: fleroux514/digger@gha-support-gcp-identity-federation
+        uses: diggerhq/digger@main
         with:
           setup-aws: true
           setup-google-cloud: true
