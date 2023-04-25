@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: refs/pull/${{ github.event.issue.number }}/merge
+          ref: refs/pull/${{ github.event.issue.number }}/head
         if: github.event_name == 'issue_comment'
       - uses: actions/checkout@v3
         if: github.event_name != 'issue_comment'
