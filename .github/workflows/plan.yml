@@ -24,7 +24,7 @@ jobs:
         if: github.event_name != 'issue_comment'
 
       - name: digger tfrun
-        uses: diggerhq/digger@main
+        uses: diggerhq/digger@fix/issue-1
         with:
           setup-aws: true
           setup-google-cloud: true
