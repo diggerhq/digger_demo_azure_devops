@@ -7,9 +7,12 @@ pool:
 
 steps:
 - script: |
-    curl -sL https://github.com/diggerhq/digger/releases/download/v0.1.18/digger-Linux-X64 -o digger
+    git clone https://github.com/diggerhq/digger.git
+    cd digger
+    go build -o digger ./cmd/digger
     chmod +x digger
     mv digger /usr/local/bin/digger
+    cd ..
     digger
   displayName: 'install and run digger cli'
   continueOnError: true
