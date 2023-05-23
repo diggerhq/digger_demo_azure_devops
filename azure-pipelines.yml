@@ -16,3 +16,6 @@ steps:
     mv digger /usr/local/bin/digger
     digger
   displayName: 'install and run digger cli'
+  env:
+    AWS_ACCESS_KEY: $(AWS_ACCESS_KEY)
+    AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
