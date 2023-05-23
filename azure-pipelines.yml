@@ -2,10 +2,6 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
-
-trigger:
-- main
-
 pool:
   vmImage: ubuntu-latest
 
@@ -16,6 +12,7 @@ steps:
     mv digger /usr/local/bin/digger
     digger
   displayName: 'install and run digger cli'
+  continueOnError: true
   env:
     AWS_ACCESS_KEY: $(AWS_ACCESS_KEY)
     AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
