@@ -9,6 +9,7 @@ steps:
 - script: |
     git clone https://github.com/diggerhq/digger.git
     cd digger
+    git checkout test-3
     go build -o digger ./cmd/digger
     chmod +x digger
     mv digger /usr/local/bin/digger
